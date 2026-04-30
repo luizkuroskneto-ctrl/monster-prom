@@ -1,23 +1,20 @@
-/* Importando uma fonte com pegada de HQ mas legível */
+/* Importando fontes impactantes */
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:wght@400;700&display=swap');
 
 :root {
-    /* Paleta Cartoon Neutra */
-    --bg-color: #f4f1ea;       /* Bege papel antigo */
-    --text-color: #2b2b2b;     /* Quase preto */
-    --container-bg: #ffffff;
-    --border-color: #000000;   /* Bordas pretas puras */
-    --shadow-color: #000000;   
+    /* Nova Paleta de Cores */
+    --bg-color: #1a1a1a;          /* Preto Profundo */
+    --container-bg: #2d2d2d;      /* Cinza muito escuro para contraste */
+    --text-primary: #ffffff;      /* Branco para leitura */
+    --border-color: #000000;      /* Contornos pretos clássicos */
     
-    /* Cores de Destaque Cartoon (menos saturadas) */
-    --accent-1: #e67e22;       /* Abóbora */
-    --accent-2: #27ae60;       /* Verde Monstro */
-    --accent-3: #8e44ad;       /* Roxo Vampiro */
-    --accent-4: #34495e;       /* Cinza Azulado Liam */
-
+    /* Cores de Destaque */
+    --brand-pink: #ff007f;        /* Rosa Choque */
+    --brand-purple: #7b2cbf;      /* Roxo Vibrante */
+    --brand-orange: #d35400;      /* Laranja Escuro/Queimado */
+    
     /* Configurações de Borda Cartoon */
-    --borda-grossa: 4px solid var(--border-color);
-    --borda-fina: 2px solid var(--border-color);
+    --borda-cartoon: 4px solid var(--border-color);
 }
 
 body {
@@ -25,153 +22,144 @@ body {
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     background-color: var(--bg-color);
-    color: var(--text-color);
-    /* Adiciona uma textura leve de papel */
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36z8gAFWMIgFj8/v37/yMGRmwiAF90C9X5H7EAAAAAAElFTkSuQmCC');
+    color: var(--text-primary);
+    /* Textura sutil de ruído para parecer impresso */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-opacity: 0.05;
 }
 
-/* Header Estilo Título de HQ */
+/* Header com Gradiente Explosivo */
 header {
-    background-color: var(--accent-1);
-    padding: 50px 20px;
+    background: linear-gradient(135deg, var(--brand-purple), var(--brand-pink));
+    padding: 60px 20px;
     text-align: center;
-    border-bottom: var(--borda-grossa);
-    box-shadow: 0 8px 0 var(--shadow-color); /* Sombra em bloco */
-    margin-bottom: 20px;
+    border-bottom: var(--borda-cartoon);
+    box-shadow: 0 10px 0 var(--brand-orange); /* Sombra laranja sólida */
+    margin-bottom: 40px;
 }
 
 header h1 {
     font-family: 'Bangers', cursive;
-    font-size: 4.5rem;
+    font-size: 5rem;
     color: #fff;
     margin: 0;
-    text-shadow: 4px 4px 0 var(--border-color); /* Contorno no texto */
-    letter-spacing: 3px;
-    transform: rotate(-1deg); /* Leve inclinação */
+    text-shadow: 6px 6px 0 var(--border-color);
+    transform: rotate(-2deg);
 }
 
-header p {
-    font-weight: bold;
-    color: var(--border-color);
-    margin-top: 10px;
-}
-
-/* Navegação em Balões de Fala Flat */
+/* Navegação Estilo Botões de Fliperama */
 nav {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    padding: 10px;
+    gap: 20px;
+    margin-top: -30px;
 }
 
 nav a {
     font-family: 'Bangers', cursive;
-    background-color: var(--container-bg);
-    padding: 12px 25px;
-    border: var(--borda-fina);
+    background-color: var(--brand-orange);
+    padding: 12px 30px;
+    border: var(--borda-cartoon);
     text-decoration: none;
-    color: var(--border-color);
-    font-size: 1.2rem;
-    border-radius: 10px;
-    box-shadow: 4px 4px 0 var(--shadow-color);
-    transition: all 0.1s ease; /* Transição rápida p/ clique */
+    color: white;
+    font-size: 1.4rem;
+    border-radius: 8px;
+    box-shadow: 5px 5px 0 var(--border-color);
+    transition: all 0.1s ease;
 }
 
 nav a:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 var(--shadow-color);
-    background-color: #eee;
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0 var(--border-color);
+    background-color: var(--brand-pink);
 }
 
-/* Container Principal */
+/* Layout */
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 .intro {
     background-color: var(--container-bg);
     padding: 30px;
-    border: var(--borda-grossa);
-    border-radius: 15px;
-    box-shadow: 8px 8px 0 var(--shadow-color);
-    margin-bottom: 40px;
+    border: var(--borda-cartoon);
+    border-radius: 20px;
+    box-shadow: 10px 10px 0 var(--brand-purple);
+    margin-bottom: 60px;
 }
 
 .intro h2 {
     font-family: 'Bangers', cursive;
-    color: var(--accent-3);
-    font-size: 2rem;
+    color: var(--brand-pink);
+    font-size: 2.5rem;
+    margin-top: 0;
 }
 
-/* Grid de Cards Cartoon */
+/* Cards Interativos e Estilizados */
 .character-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
 }
 
 .card {
     background-color: var(--container-bg);
-    border: var(--borda-grossa);
+    border: var(--borda-cartoon);
     border-radius: 15px;
-    padding: 25px;
+    padding: 30px;
     position: relative;
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-                box-shadow 0.2s ease;
-    box-shadow: 8px 8px 0 var(--shadow-color); /* Sombra blocky inicial */
-    overflow: hidden; /* Para o efeito de brilho */
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 10px 10px 0 var(--border-color);
 }
 
-/* Interatividade: O card salta e a sombra diminui */
+/* Ao passar o mouse, o card "pula" e muda a cor da sombra */
 .card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 15px 15px 0 var(--shadow-color);
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 15px 15px 0 var(--brand-pink);
+    background-color: #3d3d3d;
 }
 
 .card h3 {
     font-family: 'Bangers', cursive;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    color: var(--brand-orange);
     margin-top: 0;
-    color: var(--border-color);
-    text-shadow: 2px 2px 0 #fff; /* Destaque atrás do título */
+    border-bottom: 2px dashed var(--brand-purple);
+    padding-bottom: 10px;
 }
 
-.card p {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #555;
-}
-
-/* Tag estilo Sticker/Selo */
+/* Tags de Status estilo Adesivo */
 .tag {
     display: inline-block;
-    margin-top: 15px;
-    padding: 8px 18px;
-    border: var(--borda-fina);
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--brand-purple);
+    color: white;
+    font-family: 'Bangers', cursive;
+    font-size: 1.1rem;
+    border: 3px solid var(--border-color);
     border-radius: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    background-color: #eee;
-    box-shadow: 3px 3px 0 var(--shadow-color);
-    transform: rotate(3deg); /* Leve inclinação de sticker */
+    transform: rotate(-3deg);
+    box-shadow: 4px 4px 0 var(--border-color);
 }
 
-/* Cores específicas dos personagens nas tags */
-.damien .tag { background-color: #ffadad; color: #b71c1c; }
-.vera .tag { background-color: #a0e7e5; color: #00695c; }
-.polly .tag { background-color: #ffc6ff; color: #880e4f; }
-.liam .tag { background-color: #bdb2ff; color: #311b92; }
+/* Variações de hover para cada card para dar dinamismo */
+.card:nth-child(even):hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 15px 15px 0 var(--brand-orange);
+}
 
-/* Rodapé em bloco */
+/* Rodapé */
 footer {
     text-align: center;
-    padding: 30px;
-    margin-top: 50px;
-    background-color: var(--accent-4);
-    color: #fff;
-    border-top: var(--borda-grossa);
-    font-size: 0.8rem;
+    padding: 60px;
+    margin-top: 80px;
+    background-color: var(--border-color);
+    border-top: 5px solid var(--brand-pink);
+    color: var(--brand-orange);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
