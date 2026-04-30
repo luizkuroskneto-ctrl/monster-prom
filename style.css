@@ -1,20 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700;800&family=Luckiest+Guy&display=swap');
 
 :root {
-    --preto-absoluto: #000000;
-    --preto-carbon: #0a0a0a;
-    --preto-fosco: #111111;
+    --preto-absolute: #000000;
+    --preto-fundo: #0a0a0a;
     --cinza-escuro: #1a1a1a;
-    --cinza-metal: #222222;
-    --rosa-neon: #ff0080;
-    --rosa-choque: #ff00aa;
-    --rosa-sangue: #e60073;
-    --laranja-escuro: #d35400;
-    --laranja-queimado: #a04000;
-    --laranja-ferrugem: #e67e22;
-    --branco-sujo: #f0f0f0;
-    --borda-cartoon: 5px solid var(--preto-absoluto);
-    --borda-cartoon-dupla: 6px double var(--preto-absoluto);
+    --cinza-claro: #2c2c2c;
+    --rosa-vibrante: #ff3b7f;
+    --rosa-choque: #ff0066;
+    --rosa-claro: #ff6b9d;
+    --laranja-monster: #ff8c42;
+    --laranja-queimado: #e67e22;
+    --amarelo-neon: #ffdd00;
+    --roxo-escuro: #4a0e4e;
+    --roxo-monster: #7b2cbf;
+    --verde-monstro: #5cdb7d;
+    --azul-monster: #4a90e2;
+    --vermelho-sangue: #d32f2f;
+    --branco-sujo: #f5f5f5;
+    --border-grossa: 4px solid var(--preto-absolute);
+    --border-media: 3px solid var(--preto-absolute);
+    --border-fina: 2px solid var(--preto-absolute);
 }
 
 * {
@@ -24,11 +29,11 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background: var(--preto-carbon);
+    font-family: 'Comic Neue', 'Open Sans', cursive;
+    background: linear-gradient(135deg, var(--preto-fundo) 0%, var(--roxo-escuro) 100%);
     color: var(--branco-sujo);
     position: relative;
-    overflow-x: hidden;
+    min-height: 100vh;
 }
 
 body::before {
@@ -38,141 +43,148 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 35px,
-        rgba(255, 0, 128, 0.03) 35px,
-        rgba(211, 84, 0, 0.03) 70px
-    );
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 59, 127, 0.05) 2px, rgba(255, 59, 127, 0.05) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 140, 66, 0.05) 2px, rgba(255, 140, 66, 0.05) 4px);
     pointer-events: none;
     z-index: 0;
 }
 
 body::after {
-    content: "";
+    content: "♥";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 20% 50%, rgba(255, 0, 128, 0.05) 0%, transparent 50%);
+    bottom: 20px;
+    right: 20px;
+    font-size: 80px;
+    color: var(--rosa-vibrante);
+    opacity: 0.1;
     pointer-events: none;
-    z-index: 0;
+    font-family: 'Luckiest Guy', cursive;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
 }
 
 header {
-    background: linear-gradient(135deg, var(--laranja-escuro) 0%, var(--rosa-neon) 50%, var(--preto-absoluto) 100%);
-    padding: 80px 20px;
+    background: linear-gradient(135deg, var(--roxo-monster) 0%, var(--rosa-vibrante) 50%, var(--laranja-monster) 100%);
+    padding: 60px 20px 80px;
     text-align: center;
-    border-bottom: var(--borda-cartoon);
+    border-bottom: var(--border-grossa);
     position: relative;
     overflow: hidden;
-    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
 header::before {
-    content: "⚡";
+    content: "⚡ ♥ ⚡";
     position: absolute;
-    font-size: 200px;
-    left: -50px;
-    top: -50px;
+    top: 20px;
+    left: 20px;
+    font-size: 40px;
+    opacity: 0.3;
+    font-family: 'Luckiest Guy', cursive;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+header::after {
+    content: "MONSTER";
+    position: absolute;
+    bottom: -30px;
+    right: -50px;
+    font-size: 120px;
     opacity: 0.1;
+    font-family: 'Luckiest Guy', cursive;
     transform: rotate(-15deg);
     pointer-events: none;
 }
 
-header::after {
-    content: "✦";
-    position: absolute;
-    font-size: 180px;
-    right: -30px;
-    bottom: -60px;
-    opacity: 0.1;
-    transform: rotate(10deg);
-    pointer-events: none;
-}
-
 header h1 {
-    font-family: 'Bangers', cursive;
-    font-size: 6rem;
-    color: var(--branco-sujo);
-    text-shadow: 8px 8px 0 var(--preto-absoluto), 12px 12px 0 var(--rosa-neon), 16px 16px 0 var(--laranja-escuro);
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 5.5rem;
+    color: var(--amarelo-neon);
+    text-shadow: 6px 6px 0 var(--preto-absolute), 10px 10px 0 var(--rosa-choque), 14px 14px 0 var(--laranja-queimado);
     letter-spacing: 4px;
-    transform: rotate(-3deg);
-    animation: vibrate 0.5s ease-in-out infinite;
-    position: relative;
+    transform: rotate(-2deg);
+    animation: bounce 1s ease infinite;
     display: inline-block;
+    margin-bottom: 15px;
 }
 
-@keyframes vibrate {
-    0%, 100% { transform: rotate(-3deg) translateX(0); }
-    25% { transform: rotate(-2deg) translateX(2px); }
-    75% { transform: rotate(-4deg) translateX(-2px); }
+@keyframes bounce {
+    0%, 100% { transform: rotate(-2deg) translateY(0); }
+    50% { transform: rotate(-2deg) translateY(-5px); }
 }
 
 header p {
-    font-size: 1.3rem;
-    margin-top: 20px;
-    background: var(--preto-absoluto);
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.4rem;
+    background: var(--preto-absolute);
     display: inline-block;
-    padding: 10px 30px;
-    border: var(--borda-cartoon);
+    padding: 12px 35px;
+    border: var(--border-media);
     border-radius: 50px;
     font-weight: 800;
     letter-spacing: 2px;
+    box-shadow: 8px 8px 0 var(--laranja-monster);
+    transform: rotate(1deg);
 }
 
 nav {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    padding: 25px 20px;
-    background: var(--preto-fosco);
-    border-bottom: var(--borda-cartoon);
+    gap: 20px;
+    padding: 20px;
+    background: var(--preto-absolute);
+    border-bottom: var(--border-grossa);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 10px 0 var(--laranja-escuro);
 }
 
 nav a {
-    font-family: 'Bangers', cursive;
-    font-size: 1.5rem;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.4rem;
     text-decoration: none;
     color: var(--branco-sujo);
-    background: var(--laranja-escuro);
-    padding: 12px 35px;
-    border: var(--borda-cartoon);
-    border-radius: 0px;
+    background: var(--laranja-monster);
+    padding: 10px 30px;
+    border: var(--border-media);
     position: relative;
     transition: all 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 8px 8px 0 var(--preto-absoluto);
+    box-shadow: 6px 6px 0 var(--preto-absolute);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 nav a::before {
-    content: "►";
+    content: "♥";
     position: absolute;
-    left: -25px;
+    left: -20px;
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
     transition: all 0.2s ease;
-    color: var(--rosa-neon);
+    color: var(--rosa-vibrante);
     font-size: 1.2rem;
 }
 
 nav a:hover {
-    transform: translate(5px, 5px);
-    box-shadow: 3px 3px 0 var(--preto-absoluto);
-    background: var(--rosa-neon);
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 var(--preto-absolute);
+    background: var(--rosa-choque);
 }
 
 nav a:hover::before {
     opacity: 1;
-    left: -35px;
+    left: -30px;
 }
 
 .container {
@@ -184,240 +196,293 @@ nav a:hover::before {
 }
 
 .intro {
-    background: var(--cinza-escuro);
+    background: linear-gradient(135deg, var(--cinza-escuro) 0%, var(--roxo-escuro) 100%);
     padding: 40px;
-    border: var(--borda-cartoon);
+    border: var(--border-grossa);
     position: relative;
     margin-bottom: 70px;
-    box-shadow: 15px 15px 0 var(--rosa-neon);
+    box-shadow: 12px 12px 0 var(--rosa-vibrante);
     transition: all 0.3s ease;
 }
 
 .intro:hover {
-    box-shadow: 20px 20px 0 var(--laranja-escuro);
-    transform: translate(-5px, -5px);
+    box-shadow: 16px 16px 0 var(--laranja-monster);
+    transform: translate(-4px, -4px);
 }
 
 .intro::before {
-    content: "!!!";
+    content: "☆ MONSTER PROM ☆";
     position: absolute;
-    top: -20px;
-    left: -20px;
-    background: var(--rosa-neon);
-    color: var(--preto-absoluto);
-    font-family: 'Bangers', cursive;
-    font-size: 1.5rem;
-    padding: 5px 20px;
-    border: var(--borda-cartoon);
-    transform: rotate(-10deg);
-    font-weight: bold;
+    top: -25px;
+    left: -25px;
+    background: var(--rosa-vibrante);
+    color: var(--amarelo-neon);
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.3rem;
+    padding: 8px 25px;
+    border: var(--border-media);
+    transform: rotate(-8deg);
+    white-space: nowrap;
+}
+
+.intro::after {
+    content: "✦";
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+    font-size: 60px;
+    color: var(--laranja-monster);
+    opacity: 0.3;
 }
 
 .intro h2 {
-    font-family: 'Bangers', cursive;
-    font-size: 3rem;
-    color: var(--rosa-neon);
-    text-shadow: 3px 3px 0 var(--preto-absoluto);
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.8rem;
+    color: var(--amarelo-neon);
+    text-shadow: 4px 4px 0 var(--preto-absolute);
     margin-bottom: 20px;
 }
 
 .intro p {
     font-size: 1.2rem;
-    line-height: 1.8;
-    font-weight: 600;
+    line-height: 1.6;
+    font-weight: 700;
 }
 
 .character-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
-    perspective: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 45px;
 }
 
 .card {
-    background: linear-gradient(135deg, var(--cinza-metal) 0%, var(--preto-fosco) 100%);
-    border: var(--borda-cartoon);
-    padding: 30px;
+    background: linear-gradient(135deg, var(--cinza-claro) 0%, var(--cinza-escuro) 100%);
+    border: var(--border-grossa);
+    padding: 30px 25px;
     position: relative;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 12px 12px 0 var(--preto-absoluto);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 10px 10px 0 var(--preto-absolute);
     cursor: pointer;
-    transform-style: preserve-3d;
     overflow: hidden;
 }
 
 .card::before {
     content: "";
     position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 59, 127, 0.1) 50%, transparent 70%);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.card:hover::before {
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 20px,
-        rgba(255, 0, 128, 0.05) 20px,
-        rgba(211, 84, 0, 0.05) 40px
-    );
-    pointer-events: none;
-    z-index: 1;
 }
 
 .card::after {
-    content: "★";
+    content: "❤️";
     position: absolute;
-    bottom: 15px;
-    right: 15px;
-    font-size: 50px;
-    color: var(--laranja-escuro);
-    opacity: 0.2;
+    bottom: 20px;
+    right: 20px;
+    font-size: 45px;
+    opacity: 0.15;
     transition: all 0.3s ease;
     pointer-events: none;
 }
 
 .card:hover {
-    transform: translateY(-15px) rotate(2deg) scale(1.02);
-    box-shadow: 18px 18px 0 var(--rosa-neon);
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 15px 15px 0 var(--rosa-vibrante);
 }
 
 .card:hover::after {
-    opacity: 0.6;
-    transform: rotate(360deg) scale(1.2);
-    color: var(--rosa-neon);
+    opacity: 0.8;
+    transform: scale(1.2) rotate(360deg);
 }
 
 .card:active {
     transform: translateY(5px) rotate(0deg);
-    box-shadow: 8px 8px 0 var(--preto-absoluto);
+    box-shadow: 5px 5px 0 var(--preto-absolute);
 }
 
 .card h3 {
-    font-family: 'Bangers', cursive;
-    font-size: 2.5rem;
-    color: var(--laranja-escuro);
-    text-shadow: 3px 3px 0 var(--preto-absoluto);
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.3rem;
+    color: var(--rosa-vibrante);
+    text-shadow: 3px 3px 0 var(--preto-absolute);
     margin-bottom: 15px;
-    border-left: 8px solid var(--rosa-neon);
+    border-left: 6px solid var(--laranja-monster);
     padding-left: 15px;
     transition: all 0.2s ease;
 }
 
 .card:hover h3 {
-    border-left-width: 15px;
-    color: var(--rosa-neon);
-    text-shadow: 4px 4px 0 var(--preto-absoluto);
+    border-left-width: 12px;
+    color: var(--amarelo-neon);
+    text-shadow: 4px 4px 0 var(--preto-absolute);
+    transform: translateX(5px);
 }
 
 .card p {
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 15px 0;
-    font-weight: 600;
-    color: var(--branco-sujo);
+    font-weight: 700;
+    font-size: 0.95rem;
 }
 
 .tag {
     display: inline-block;
-    margin-top: 20px;
-    padding: 8px 20px;
-    background: var(--laranja-escuro);
-    border: var(--borda-cartoon);
-    font-family: 'Bangers', cursive;
-    font-size: 1rem;
+    margin-top: 15px;
+    padding: 6px 18px;
+    background: var(--laranja-monster);
+    border: var(--border-media);
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 0.9rem;
     letter-spacing: 1px;
     position: relative;
     transition: all 0.2s ease;
     transform: rotate(-2deg);
-    box-shadow: 5px 5px 0 var(--preto-absoluto);
+    box-shadow: 4px 4px 0 var(--preto-absolute);
 }
 
 .card:hover .tag {
-    transform: rotate(0deg) translateY(-5px);
-    background: var(--rosa-neon);
-    box-shadow: 8px 8px 0 var(--preto-absoluto);
+    transform: rotate(2deg) translateY(-3px);
+    background: var(--rosa-choque);
+    box-shadow: 6px 6px 0 var(--preto-absolute);
 }
 
-.glow-effect {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 0, 128, 0.3), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
+.character-stats {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
 }
 
-.card:hover .glow-effect {
-    opacity: 0.5;
+.stat {
+    background: var(--preto-absolute);
+    padding: 4px 10px;
+    border: var(--border-fina);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--amarelo-neon);
 }
 
-.damien { border-left: 8px solid var(--rosa-neon); }
-.vera { border-left: 8px solid var(--laranja-escuro); }
-.polly { border-left: 8px solid var(--rosa-choque); }
-.liam { border-left: 8px solid var(--laranja-ferrugem); }
+.damien { border-top: 8px solid var(--vermelho-sangue); }
+.vera { border-top: 8px solid var(--verde-monstro); }
+.polly { border-top: 8px solid var(--rosa-choque); }
+.liam { border-top: 8px solid var(--azul-monster); }
 
-.damien:hover { border-left-width: 12px; }
-.vera:hover { border-left-width: 12px; }
-.polly:hover { border-left-width: 12px; }
-.liam:hover { border-left-width: 12px; }
+.damien:hover { border-top-width: 12px; }
+.vera:hover { border-top-width: 12px; }
+.polly:hover { border-top-width: 12px; }
+.liam:hover { border-top-width: 12px; }
 
+/* Botão interativo fofo */
+.button-crush {
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    background: var(--roxo-monster);
+    padding: 10px;
+    border: var(--border-media);
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: 5px 5px 0 var(--preto-absolute);
+}
+
+.button-crush:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0 var(--preto-absolute);
+    background: var(--rosa-vibrante);
+}
+
+.button-crush:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0px 0px 0 var(--preto-absolute);
+}
+
+/* Footer Monster Style */
 footer {
     text-align: center;
-    padding: 60px 20px;
-    background: var(--preto-absoluto);
-    border-top: var(--borda-cartoon);
+    padding: 50px 20px;
+    background: var(--preto-absolute);
+    border-top: var(--border-grossa);
     position: relative;
     margin-top: 80px;
-    z-index: 1;
 }
 
 footer::before {
-    content: "✧ ✦ ✧";
+    content: "✧ MONSTER HIGH ✧";
     position: absolute;
-    top: -20px;
+    top: -22px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--rosa-neon);
-    padding: 10px 30px;
-    border: var(--borda-cartoon);
-    font-family: 'Bangers', cursive;
-    font-size: 1.2rem;
-    color: var(--preto-absoluto);
+    background: var(--rosa-vibrante);
+    padding: 8px 30px;
+    border: var(--border-media);
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1rem;
+    color: var(--amarelo-neon);
     white-space: nowrap;
 }
 
 footer p {
-    font-size: 1rem;
-    letter-spacing: 3px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
     font-weight: bold;
-    color: var(--laranja-escuro);
+    color: var(--laranja-monster);
 }
 
-.pulse-animation {
-    animation: pulse 2s infinite;
+/* Efeito de coração flutuante nos cards */
+.heart-effect {
+    position: absolute;
+    pointer-events: none;
+    animation: heartFloat 1s ease-out forwards;
+    font-size: 20px;
 }
 
-@keyframes pulse {
-    0%, 100% { text-shadow: 3px 3px 0 var(--preto-absoluto); }
-    50% { text-shadow: 6px 6px 0 var(--rosa-neon); }
+@keyframes heartFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px) scale(1.5);
+    }
 }
 
 @media (max-width: 768px) {
     header h1 {
-        font-size: 3rem;
-        text-shadow: 5px 5px 0 var(--preto-absoluto), 8px 8px 0 var(--rosa-neon);
+        font-size: 2.8rem;
+        text-shadow: 4px 4px 0 var(--preto-absolute), 6px 6px 0 var(--rosa-choque);
+    }
+    
+    header {
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    }
+    
+    header p {
+        font-size: 1rem;
+        padding: 8px 20px;
     }
     
     nav {
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 12px;
     }
     
     nav a {
         font-size: 1rem;
-        padding: 8px 20px;
+        padding: 6px 18px;
     }
     
     .container {
@@ -425,7 +490,14 @@ footer p {
     }
     
     .intro h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .intro::before {
+        font-size: 0.8rem;
+        padding: 5px 15px;
+        top: -18px;
+        left: -18px;
     }
     
     .card h3 {
@@ -438,16 +510,26 @@ footer p {
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--preto-carbon);
-    border-left: 2px solid var(--laranja-escuro);
+    background: var(--preto-absolute);
+    border-left: var(--border-fina);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--rosa-neon);
-    border: 2px solid var(--preto-absoluto);
-    border-radius: 0px;
+    background: var(--rosa-vibrante);
+    border: var(--border-fina);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--laranja-escuro);
+    background: var(--laranja-monster);
+}
+
+/* Animações especiais */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+.card:active {
+    animation: shake 0.1s ease-in-out 0s 2;
 }
