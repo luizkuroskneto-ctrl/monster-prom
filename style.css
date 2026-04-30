@@ -1,159 +1,177 @@
-/* Importando uma fonte mais limpa e moderna */
-@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&family=Open+Sans:wght@300;600&display=swap');
+/* Importando uma fonte com pegada de HQ mas legível */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:wght@400;700&display=swap');
 
 :root {
-    --glass: rgba(255, 255, 255, 0.2);
-    --glass-border: rgba(255, 255, 255, 0.4);
-    --accent-blue: #00a8e8;
-    --accent-green: #90be6d;
-    --text-dark: #2c3e50;
+    /* Paleta Cartoon Neutra */
+    --bg-color: #f4f1ea;       /* Bege papel antigo */
+    --text-color: #2b2b2b;     /* Quase preto */
+    --container-bg: #ffffff;
+    --border-color: #000000;   /* Bordas pretas puras */
+    --shadow-color: #000000;   
+    
+    /* Cores de Destaque Cartoon (menos saturadas) */
+    --accent-1: #e67e22;       /* Abóbora */
+    --accent-2: #27ae60;       /* Verde Monstro */
+    --accent-3: #8e44ad;       /* Roxo Vampiro */
+    --accent-4: #34495e;       /* Cinza Azulado Liam */
+
+    /* Configurações de Borda Cartoon */
+    --borda-grossa: 4px solid var(--border-color);
+    --borda-fina: 2px solid var(--border-color);
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    /* Fundo clássico Frutiger Aero: Aurora boreal suave e bolhas */
-    background: radial-gradient(circle at 50% 50%, #e0f7fa 0%, #80deea 50%, #4dd0e1 100%);
-    background-attachment: fixed;
-    color: var(--text-dark);
-    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* Adiciona uma textura leve de papel */
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36z8gAFWMIgFj8/v37/yMGRmwiAF90C9X5H7EAAAAAAElFTkSuQmCC');
 }
 
-/* Header Estilo "Aero Glass" */
+/* Header Estilo Título de HQ */
 header {
-    background: var(--glass);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid var(--glass-border);
-    padding: 60px 20px;
+    background-color: var(--accent-1);
+    padding: 50px 20px;
     text-align: center;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    border-bottom: var(--borda-grossa);
+    box-shadow: 0 8px 0 var(--shadow-color); /* Sombra em bloco */
+    margin-bottom: 20px;
 }
 
 header h1 {
-    font-size: 3rem;
+    font-family: 'Bangers', cursive;
+    font-size: 4.5rem;
     color: #fff;
-    text-shadow: 0 2px 10px rgba(0, 168, 232, 0.5);
-    font-weight: 600;
     margin: 0;
+    text-shadow: 4px 4px 0 var(--border-color); /* Contorno no texto */
+    letter-spacing: 3px;
+    transform: rotate(-1deg); /* Leve inclinação */
 }
 
-/* Navegação Flutuante */
+header p {
+    font-weight: bold;
+    color: var(--border-color);
+    margin-top: 10px;
+}
+
+/* Navegação em Balões de Fala Flat */
 nav {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: -20px;
+    gap: 15px;
+    padding: 10px;
 }
 
 nav a {
-    background: white;
-    padding: 10px 25px;
-    border-radius: 50px;
+    font-family: 'Bangers', cursive;
+    background-color: var(--container-bg);
+    padding: 12px 25px;
+    border: var(--borda-fina);
     text-decoration: none;
-    color: var(--accent-blue);
-    font-weight: 600;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+    color: var(--border-color);
+    font-size: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 var(--shadow-color);
+    transition: all 0.1s ease; /* Transição rápida p/ clique */
 }
 
 nav a:hover {
-    transform: scale(1.1);
-    background: var(--accent-blue);
-    color: white;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--shadow-color);
+    background-color: #eee;
 }
 
 /* Container Principal */
 .container {
-    max-width: 1100px;
-    margin: 60px auto;
+    max-width: 1000px;
+    margin: 40px auto;
     padding: 0 20px;
 }
 
 .intro {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.4);
+    background-color: var(--container-bg);
     padding: 30px;
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
+    border: var(--borda-grossa);
+    border-radius: 15px;
+    box-shadow: 8px 8px 0 var(--shadow-color);
     margin-bottom: 40px;
 }
 
-/* Grid de Cards Interativos */
+.intro h2 {
+    font-family: 'Bangers', cursive;
+    color: var(--accent-3);
+    font-size: 2rem;
+}
+
+/* Grid de Cards Cartoon */
 .character-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 25px;
-    padding: 30px;
+    background-color: var(--container-bg);
+    border: var(--borda-grossa);
+    border-radius: 15px;
+    padding: 25px;
     position: relative;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    text-align: center;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.2s ease;
+    box-shadow: 8px 8px 0 var(--shadow-color); /* Sombra blocky inicial */
+    overflow: hidden; /* Para o efeito de brilho */
 }
 
-/* Efeito de brilho (Glossy) no card */
-.card::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
-}
-
+/* Interatividade: O card salta e a sombra diminui */
 .card:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    background: rgba(255, 255, 255, 0.8);
-}
-
-.card:hover::before {
-    opacity: 0.3;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 15px 15px 0 var(--shadow-color);
 }
 
 .card h3 {
-    color: #0077b6;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: var(--border-color);
+    text-shadow: 2px 2px 0 #fff; /* Destaque atrás do título */
 }
 
-/* Tags com aspecto de bolha */
+.card p {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Tag estilo Sticker/Selo */
 .tag {
     display: inline-block;
-    padding: 8px 20px;
-    border-radius: 50px;
-    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
-    border: 1px solid #ddd;
-    font-size: 0.85rem;
-    color: #555;
-    box-shadow: inset 0 2px 4px rgba(255,255,255,1), 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 15px;
+    padding: 8px 18px;
+    border: var(--borda-fina);
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    background-color: #eee;
+    box-shadow: 3px 3px 0 var(--shadow-color);
+    transform: rotate(3deg); /* Leve inclinação de sticker */
 }
 
-/* Customização de cores sutis por personagem */
-.damien:hover { border-bottom: 5px solid #ffadad; }
-.vera:hover { border-bottom: 5px solid #a0e7e5; }
-.polly:hover { border-bottom: 5px solid #ffc6ff; }
-.liam:hover { border-bottom: 5px solid #bdb2ff; }
+/* Cores específicas dos personagens nas tags */
+.damien .tag { background-color: #ffadad; color: #b71c1c; }
+.vera .tag { background-color: #a0e7e5; color: #00695c; }
+.polly .tag { background-color: #ffc6ff; color: #880e4f; }
+.liam .tag { background-color: #bdb2ff; color: #311b92; }
 
-/* Rodapé */
+/* Rodapé em bloco */
 footer {
-    margin-top: 50px;
-    padding: 30px;
     text-align: center;
-    background: var(--glass);
+    padding: 30px;
+    margin-top: 50px;
+    background-color: var(--accent-4);
+    color: #fff;
+    border-top: var(--borda-grossa);
     font-size: 0.8rem;
 }
