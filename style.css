@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700;800&family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Rubik+80s+Fade&family=Bungee+Shade&family=Press+Start+2P&family=Monoton&family=Black+Ops+One&family=Righteous&family=Archivo+Black&display=swap');
 
 :root {
     --preto-absolute: #000000;
@@ -29,7 +29,7 @@
 }
 
 body {
-    font-family: 'Comic Neue', 'Open Sans', cursive;
+    font-family: 'Fredoka One', 'Comic Neue', cursive;
     background: linear-gradient(135deg, var(--preto-fundo) 0%, var(--roxo-escuro) 100%);
     color: var(--branco-sujo);
     position: relative;
@@ -59,7 +59,7 @@ body::after {
     color: var(--rosa-vibrante);
     opacity: 0.1;
     pointer-events: none;
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Monoton', cursive;
     animation: float 3s ease-in-out infinite;
 }
 
@@ -85,7 +85,7 @@ header::before {
     left: 20px;
     font-size: 40px;
     opacity: 0.3;
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Rubik 80s Fade', cursive;
     animation: spin 4s linear infinite;
 }
 
@@ -101,13 +101,13 @@ header::after {
     right: -50px;
     font-size: 120px;
     opacity: 0.1;
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Bungee Shade', cursive;
     transform: rotate(-15deg);
     pointer-events: none;
 }
 
 header h1 {
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Rubik 80s Fade', 'Bungee Shade', cursive;
     font-size: 5.5rem;
     color: var(--amarelo-neon);
     text-shadow: 6px 6px 0 var(--preto-absolute), 10px 10px 0 var(--rosa-choque), 14px 14px 0 var(--laranja-queimado);
@@ -124,7 +124,7 @@ header h1 {
 }
 
 header p {
-    font-family: 'Comic Neue', cursive;
+    font-family: 'Righteous', cursive;
     font-size: 1.4rem;
     background: var(--preto-absolute);
     display: inline-block;
@@ -150,7 +150,7 @@ nav {
 }
 
 nav a {
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Black Ops One', 'Fredoka One', cursive;
     font-size: 1.4rem;
     text-decoration: none;
     color: var(--branco-sujo);
@@ -174,6 +174,7 @@ nav a::before {
     transition: all 0.2s ease;
     color: var(--rosa-vibrante);
     font-size: 1.2rem;
+    font-family: 'Monoton', cursive;
 }
 
 nav a:hover {
@@ -217,8 +218,8 @@ nav a:hover::before {
     left: -25px;
     background: var(--rosa-vibrante);
     color: var(--amarelo-neon);
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 1.3rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
     padding: 8px 25px;
     border: var(--border-media);
     transform: rotate(-8deg);
@@ -233,20 +234,22 @@ nav a:hover::before {
     font-size: 60px;
     color: var(--laranja-monster);
     opacity: 0.3;
+    font-family: 'Monoton', cursive;
 }
 
 .intro h2 {
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 2.8rem;
+    font-family: 'Bungee Shade', 'Fredoka One', cursive;
+    font-size: 2.5rem;
     color: var(--amarelo-neon);
     text-shadow: 4px 4px 0 var(--preto-absolute);
     margin-bottom: 20px;
 }
 
 .intro p {
+    font-family: 'Fredoka One', cursive;
     font-size: 1.2rem;
     line-height: 1.6;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .character-grid {
@@ -310,7 +313,7 @@ nav a:hover::before {
 }
 
 .card h3 {
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Black Ops One', 'Fredoka One', cursive;
     font-size: 2.3rem;
     color: var(--rosa-vibrante);
     text-shadow: 3px 3px 0 var(--preto-absolute);
@@ -328,9 +331,10 @@ nav a:hover::before {
 }
 
 .card p {
+    font-family: 'Fredoka One', cursive;
     line-height: 1.5;
     margin: 15px 0;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 0.95rem;
 }
 
@@ -340,8 +344,8 @@ nav a:hover::before {
     padding: 6px 18px;
     background: var(--laranja-monster);
     border: var(--border-media);
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 0.9rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
     letter-spacing: 1px;
     position: relative;
     transition: all 0.2s ease;
@@ -366,10 +370,11 @@ nav a:hover::before {
     background: var(--preto-absolute);
     padding: 4px 10px;
     border: var(--border-fina);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 800;
     text-transform: uppercase;
     color: var(--amarelo-neon);
+    font-family: 'Press Start 2P', monospace;
 }
 
 .damien { border-top: 8px solid var(--vermelho-sangue); }
@@ -382,7 +387,6 @@ nav a:hover::before {
 .polly:hover { border-top-width: 12px; }
 .liam:hover { border-top-width: 12px; }
 
-/* Botão interativo fofo */
 .button-crush {
     display: inline-block;
     margin-top: 20px;
@@ -391,7 +395,7 @@ nav a:hover::before {
     background: var(--roxo-monster);
     padding: 10px;
     border: var(--border-media);
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Righteous', cursive;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.1s ease;
@@ -409,7 +413,6 @@ nav a:hover::before {
     box-shadow: 0px 0px 0 var(--preto-absolute);
 }
 
-/* Footer Monster Style */
 footer {
     text-align: center;
     padding: 50px 20px;
@@ -428,20 +431,20 @@ footer::before {
     background: var(--rosa-vibrante);
     padding: 8px 30px;
     border: var(--border-media);
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 1rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
     color: var(--amarelo-neon);
     white-space: nowrap;
 }
 
 footer p {
+    font-family: 'Fredoka One', cursive;
     font-size: 0.9rem;
     letter-spacing: 2px;
     font-weight: bold;
     color: var(--laranja-monster);
 }
 
-/* Efeito de coração flutuante nos cards */
 .heart-effect {
     position: absolute;
     pointer-events: none;
@@ -462,7 +465,7 @@ footer p {
 
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         text-shadow: 4px 4px 0 var(--preto-absolute), 6px 6px 0 var(--rosa-choque);
     }
     
@@ -481,7 +484,7 @@ footer p {
     }
     
     nav a {
-        font-size: 1rem;
+        font-size: 0.9rem;
         padding: 6px 18px;
     }
     
@@ -490,11 +493,11 @@ footer p {
     }
     
     .intro h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     
     .intro::before {
-        font-size: 0.8rem;
+        font-size: 0.4rem;
         padding: 5px 15px;
         top: -18px;
         left: -18px;
@@ -502,6 +505,14 @@ footer p {
     
     .card h3 {
         font-size: 1.8rem;
+    }
+    
+    .tag {
+        font-size: 0.45rem;
+    }
+    
+    .stat {
+        font-size: 0.45rem;
     }
 }
 
@@ -523,7 +534,6 @@ footer p {
     background: var(--laranja-monster);
 }
 
-/* Animações especiais */
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-2px); }
